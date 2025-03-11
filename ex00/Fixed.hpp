@@ -5,10 +5,10 @@
 class Fixed
 {
 private:
-	int fix;
-	static const int bits;
+	int value;
+	static const int bits = 8;
 public:
-	Fixed(/* args */);
+	Fixed();
 	~Fixed();
 	int getRawBits(void);
 	void SetRawBits(int const raw);
