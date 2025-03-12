@@ -10,6 +10,8 @@ private:
 public:
 	Fixed();
 	~Fixed();
+	Fixed(const Fixed &source);
+	Fixed &operator = (const Fixed &source);
 	int getRawBits(void);
 	void SetRawBits(int const raw);
 };
