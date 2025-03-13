@@ -14,7 +14,7 @@ public:
 	Fixed(const int number);
 	Fixed(const float number);
 
-	Fixed &operator = (const Fixed &source);
+	Fixed &operator=(const Fixed &source);
 
 	~Fixed();
 	
@@ -24,6 +24,10 @@ public:
 	int toInt(void) const;
 };
 
-
+/*
+	*** Overload of "<<" ***
+	**ReturnType operator<symbol>(parameters);**
+*/
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

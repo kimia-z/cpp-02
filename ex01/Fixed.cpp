@@ -5,10 +5,10 @@ Fixed::Fixed() : value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &source)
+Fixed::Fixed(const Fixed &source) : value(source.value)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = source;
+	// *this = source;
 }
 
 Fixed::Fixed(const int number) : value(number << bits)
@@ -47,12 +47,18 @@ int Fixed::getRawBits(void)
 
 float Fixed::toFloat(void) const
 {
-	float res = value / (1 << bits);
-	return res;
+	// float res = value / (1 << bits);
+	// return res;
+	return static_cast<float>(value) / (1 << bits);
 }
 
 int Fixed::toInt(void) const
 {
 	int res = value >> bits;
 	return res;
+}
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return out;
 }
