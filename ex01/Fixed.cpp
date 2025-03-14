@@ -8,7 +8,6 @@ Fixed::Fixed() : value(0)
 Fixed::Fixed(const Fixed &source) : value(source.value)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	// *this = source;
 }
 
 Fixed::Fixed(const int number) : value(number << bits)
@@ -47,8 +46,6 @@ int Fixed::getRawBits(void)
 
 float Fixed::toFloat(void) const
 {
-	// float res = value / (1 << bits);
-	// return res;
 	return static_cast<float>(value) / (1 << bits);
 }
 
